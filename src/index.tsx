@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+
 import RoutePages from '@/pages/RoutePages';
 import { Provider } from 'react-redux';
 import configStore from '@/configStore';
@@ -16,4 +17,5 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+const root = ReactDOM.createRoot(document.querySelector('#app'));
+root.render(<App />);
