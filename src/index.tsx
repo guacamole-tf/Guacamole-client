@@ -1,17 +1,19 @@
-import React from "react";
+import React from 'react';
 import ReactDOM from 'react-dom';
-import RoutePages from "@/pages/RoutePages";
+import RoutePages from '@/pages/RoutePages';
+import { Provider } from 'react-redux';
+import configStore from '@/configStore';
 
 const App = () => {
+  const { store } = configStore();
 
   return (
     <div>
-      <RoutePages />
+      <Provider store={store}>
+        <RoutePages />
+      </Provider>
     </div>
   );
-}
+};
 
-ReactDOM.render(
-  <App />,
-  document.querySelector('#app')
-);
+ReactDOM.render(<App />, document.querySelector('#app'));
